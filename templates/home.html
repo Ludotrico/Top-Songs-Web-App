@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello world</title>
+    <title>Top Songs</title>
 
 </head>
 <body>
 
     <script type="text/javascript" src="/static/functions.js"></script>
 
-
-
     {% for song in songs %}
-
-
-    <button name="play" value="{{song}}" onClick="play(this.value)">Play</button>
-
+        <img src="{{song.image}}" alt="{{song.songName}}">
+        <h1>{{song.songName}}</h1>
+        <h4>{{song.artists}}</h4>
+        {% if song.mp3 %}
+        <button name="play" value="{{song.mp3}}" onClick="play(this.value)" id="{{song.mp3}}">Play</button>
+        {% endif %}
     {% endfor %}
 
 
