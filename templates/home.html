@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+
+</head>
+<body>
+
+    <script type="text/javascript" src="/static/functions.js"></script>
+
+
+
+    {% for song in songs %}
+
+
+    <button name="play" value="{{song}}" onClick="play(this.value)">Play</button>
+
+    {% endfor %}
+
+
+</body>
+</html>
