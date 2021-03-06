@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 import requests
 
 app = Flask(__name__)
@@ -14,26 +14,43 @@ ACCESS_TOKEN = None
 def home():
     getSpotifyToken()
 
-    return render_template("home.html", songs=getTopSongs("37i9dQZEVXbMDoHDwVN2tF"), type=0)
+    limit = 10
+    if request.args.get('limit'):
+        limit = request.args.get('limit')
+
+
+    return render_template("home.html", songs=getTopSongs("37i9dQZEVXbMDoHDwVN2tF"), type=0, limit=int(limit), path='global')
 
 
 @app.route("/usa")
 def USATop50():
     getSpotifyToken()
 
-    return render_template("home.html", songs=getTopSongs("37i9dQZEVXbLp5XoPON0wI"), type=1)
+    limit = 10
+    if request.args.get('limit'):
+        limit = request.args.get('limit')
+
+    return render_template("home.html", songs=getTopSongs("37i9dQZEVXbLp5XoPON0wI"), type=1, limit=int(limit), path='usa')
 
 @app.route("/canada")
 def canadaTop50():
     getSpotifyToken()
 
-    return render_template("home.html", songs=getTopSongs("37i9dQZEVXbKj23U1GF4IR"), type=2)
+    limit = 10
+    if request.args.get('limit'):
+        limit = request.args.get('limit')
+
+    return render_template("home.html", songs=getTopSongs("37i9dQZEVXbKj23U1GF4IR"), type=2, limit=int(limit), path='canada')
 
 @app.route("/mexico")
 def mexicoTop50():
     getSpotifyToken()
 
-    return render_template("home.html", songs=getTopSongs("37i9dQZEVXbO3qyFxbkOE1"), type=3)
+    limit = 10
+    if request.args.get('limit'):
+        limit = request.args.get('limit')
+
+    return render_template("home.html", songs=getTopSongs("37i9dQZEVXbO3qyFxbkOE1"), type=3, limit=int(limit), path='mexico')
 
 
 
