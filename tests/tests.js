@@ -20,6 +20,4 @@ module.exports = {
     .assert.elementPresent(".card-text");
     },
 
-
-
 }
