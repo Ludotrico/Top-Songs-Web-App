@@ -7,5 +7,5 @@
 
 3.) Run app: python3 -m flask run
 
-<img src="readme1.png" alt="drawing" width="250"/>
-<img src="readme2.png" alt="drawing" width="250"/>
+<img src="readme1.png" alt="drawing" width="800"/>
+<img src="readme2.png" alt="drawing" width="800"/>
