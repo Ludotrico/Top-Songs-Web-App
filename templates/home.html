@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Top Songs</title>
+
+
+    <link rel="stylesheet"  href="/static/main.css">
 
 </head>
 <body>
 
     <script type="text/javascript" src="/static/functions.js"></script>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Top 50 Songs</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a {%if type == 0 %}  class= "nav-item nav-link active" {% else %} class= "nav-item nav-link" {% endif %}  href="/global">Global   </a>
+      <a {%if type == 1 %}  class= "nav-item nav-link active" {% else %} class= "nav-item nav-link" {% endif %} href="/usa">USA</a>
+      <a {%if type == 2 %}  class= "nav-item nav-link active" {% else %} class= "nav-item nav-link" {% endif %} href="/canada">Canada</a>
+        <a {%if type == 3 %}  class= "nav-item nav-link active" {% else %} class= "nav-item nav-link" {% endif %} href="/mexico">Mexico</a>
+    </div>
+  </div>
+</nav>
+
 
     {% for song in songs %}
         <img src="{{song.image}}" alt="{{song.songName}}">
